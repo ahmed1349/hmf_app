@@ -42,7 +42,7 @@ export type SocialLink = {
 
 export const NAV_LINKS: NavLink[] = [
   { label: "الصفحة الرئيسية", href: "#hero" },
-  { label: "من نحن", href: "#about" },
+  { label: "من نحن", href: "#about-us" },
   { label: "خدماتنا", href: "#services" },
   { label: "مشاريعنا", href: "#projects" },
   { label: "تواصل معنا", href: "#contact" },

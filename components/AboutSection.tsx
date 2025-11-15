@@ -1,46 +1,92 @@
+// AboutSection.tsx
 import Link from "next/link";
+import { Building2, Users, Award } from "lucide-react";
 
-import { ABOUT_HIGHLIGHTS } from "@/constants";
+
+const ABOUT_HIGHLIGHTS = [
+  {
+    title: "خبرة واسعة",
+    description: "أكثر من 15 عاماً من الخبرة في تقديم الحلول الهندسية المتكاملة",
+    icon: Building2
+  },
+  {
+    title: "فريق محترف",
+    description: "نخبة من المهندسين والفنيين المؤهلين لتنفيذ المشاريع بأعلى جودة",
+    icon: Users
+  },
+  {
+    title: "معايير عالمية",
+    description: "نلتزم بأعلى المعايير العالمية في جميع مراحل التنفيذ",
+    icon: Award
+  }
+];
 
 export default function AboutSection() {
   return (
-    <section id="about" className="section section--about">
-      <div className="section__inner section__inner--split">
-        <div className="section__media" aria-hidden="true">
-          <div className="section__media-card">
-            <span>منذ عام 2010</span>
-            <p>خبرة ممتدة في تقديم الحلول الهندسية في أنحاء المملكة.</p>
+    <section id="about-us" className="about-section" dir="rtl">
+      <div className="about-container">
+        {/* Section Title */}
+        <div className="about-section-header">
+          <h2 className="about-section-title">معلومات عنا</h2>
+        </div>
+
+        {/* Main Content Grid */}
+        <div className="about-main-grid">
+          {/* Right Side - Text Content */}
+          <div className="about-text-content">
+            <h3 className="about-main-title">
+              متخصصة في تقديم الخدمات الفنية والهندسية للمشاريع والبنى التحتية منذ عام 2010
+            </h3>
+            <p className="about-main-description">
+              نعمل على توفير حلول مبتكرة تضمن نجاح المشاريع وتلبي احتياجات عملائنا من الجهات الحكومية
+              والخاصة بكفاءة واحترافية، بدعم من فريق متمرس يستخدم أحدث التقنيات ويطبق أعلى المعايير
+              العالمية.
+            </p>
+              <Link href="/services" className="about-cta-button">
+              <span> اكتشف خدماتنا     &gt;&gt;</span>
+            </Link>
+
+     
+          </div>
+
+          {/* Left Side - Image */}
+          <div className="about-image-wrapper">
+            <img
+              src="/images/about/about1.png"
+              alt="مشاريع هندسية"
+              className="about-main-image"
+            />
+            <div className="about-image-overlay"></div>
+            <div className="about-image-badge">
+              <p className="about-badge-year">منذ عام 2010</p>
+              <p className="about-badge-text">خبرة ممتدة في المملكة</p>
+            </div>
           </div>
         </div>
 
-        <div className="section__content">
-          <div className="section__eyebrow">معلومات عنا</div>
-          <h2 className="section__title">
-            متخصصة في تقديم الخدمات الفنية والهندسية للمشاريع والبنى التحتية منذ عام 2010.
-          </h2>
-          <p className="section__lead">
-            نعمل على توفير حلول مبتكرة تضمن نجاح المشاريع وتلبي احتياجات عملائنا من الجهات الحكومية
-            والخاصة بكفاءة واحترافية، بدعم من فريق متمرس يستخدم أحدث التقنيات ويطبق أعلى المعايير
-            العالمية.
-          </p>
-
-          <div className="section__grid section__grid--stacked">
-            {ABOUT_HIGHLIGHTS.map((item) => (
-              <div key={item.title} className="info-card">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+        {/* Three Cards */}
+        <div className="about-cards-grid">
+          {ABOUT_HIGHLIGHTS.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div key={index} className="about-card">
+                <div className="about-card-content">
+                  {/* Text Content - Left Side */}
+                  <div className="about-card-text">
+                    <h4 className="about-card-title">{item.title}</h4>
+                    <p className="about-card-description">{item.description}</p>
+                  </div>
+                  
+                  {/* Icon - Right Side */}
+                  <div className="about-card-icon-wrapper">
+                    <div className="about-card-icon">
+                      <Icon className="about-icon" />
+                    </div>
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
-
-          <div className="section__cta-group">
-            <Link href="/services" className="section__cta section__cta--primary">
-              اكتشف خدماتنا
-            </Link>
-            <Link href="/recent-work" className="section__cta section__cta--ghost">
-              عرض المشاريع
-            </Link>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>
