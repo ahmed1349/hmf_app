@@ -1,34 +1,77 @@
-import Link from "next/link";
+/* eslint-disable @next/next/no-img-element */
+import React from 'react';
 
-import { SERVICES } from "@/constants";
+
+const SERVICES = [
+  {
+    id: 1,
+    title: 'التصميم المعماري',
+    description: 'نقدم حلول تصميمية مبتكرة تجمع بين الجمال والوظيفة، مع مراعاة أحدث المعايير العالمية',
+    image: '/images/service/f1.png'
+  },
+  {
+    id: 2,
+    title: 'الإشراف على التنفيذ',
+    description: 'فريق متخصص لضمان تنفيذ المشاريع وفق أعلى معايير الجودة والسلامة المهنية',
+    image: '/images/service/f2.png'
+  },
+  {
+    id: 3,
+    title: 'الاستشارات الهندسية',
+    description: 'استشارات فنية شاملة تغطي جميع مراحل المشروع من الدراسات الأولية حتى التسليم النهائي',
+    image: '/images/service/f3.png'
+  },
+
+
+   {
+    id: 4,
+    title: 'التصميم المعماري',
+    description: 'نقدم حلول تصميمية مبتكرة تجمع بين الجمال والوظيفة، مع مراعاة أحدث المعايير العالمية',
+    image: '/images/service/f4.png'
+  },
+  {
+    id: 5,
+    title: 'الإشراف على التنفيذ',
+    description: 'فريق متخصص لضمان تنفيذ المشاريع وفق أعلى معايير الجودة والسلامة المهنية',
+    image: '/images/service/f1.png'
+  },
+  {
+    id: 6,
+    title: 'الاستشارات الهندسية',
+    description: 'استشارات فنية شاملة تغطي جميع مراحل المشروع من الدراسات الأولية حتى التسليم النهائي',
+    image: '/images/service/f2.png'
+  }
+];
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="section">
-      <div className="section__inner">
-        <div className="section__header">
-          <div className="section__eyebrow">خدماتنا</div>
-          <h2 className="section__title">خدماتنا الهندسية المتكاملة</h2>
-          <p className="section__lead">
+    <section className="services-section" id="services" dir="rtl">
+      <div className="services-container">
+        {/* Header Section */}
+        <div className="services-header">
+          <h2 className="services-title">خدماتنا</h2>
+          <p className="services-description">
             نقدّم خدمات فنية واستشارية تغطي مراحل المشاريع من الدراسات والتصميم حتى الإشراف والتنفيذ،
             وفق أعلى معايير الجودة والسلامة.
           </p>
+          <button className="services-button">
+            
+             <span> استعرض جميع الخدمات &gt;&gt;</span>
+            </button>
         </div>
 
-        <div className="section__grid section__grid--cards">
+        {/* Cards Section */}
+        <div className="services-grid">
           {SERVICES.map((service) => (
-            <article key={service.title} className="service-card">
-              <div
-                className="service-card__media"
-                style={{ backgroundImage: `url(${service.image})` }}
-                aria-hidden="true"
-              />
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <Link href="/recent-work" className="service-card__link">
-                استعرض المشاريع المرتبطة
-              </Link>
-            </article>
+            <div key={service.id} className="service-card">
+              <div className="service-card__image">
+                <img src={service.image} alt={service.title} />
+              </div>
+              <div className="service-card__content">
+                <h3 className="service-card__title">{service.title}</h3>
+                <p className="service-card__text">{service.description}</p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
