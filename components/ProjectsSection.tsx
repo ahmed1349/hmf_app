@@ -6,30 +6,30 @@ import Link from "next/link";
 const FEATURED_PROJECTS = [
   {
     id: 1,
-    logo: "🏛️",
-    location: "الرياض، المملكة العربية السعودية",
-    title: "مركز الابتكار الحضري",
+    logo: "/images/projects/logo1.png",
+    location: " مدينة الباحة ",
+    title: "المركز الجنوبي",
     description:
       "مشروع متكامل لتطوير مركز حضري مستدام يجمع بين العمارة الحديثة والتراث المحلي، مع التركيز على الاستدامة البيئية وتعزيز جودة الحياة. يشمل المشروع مساحات خضراء واسعة ومرافق مجتمعية متطورة.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
+    image: "/images/projects/image1.png",
   },
   {
     id: 2,
-    logo: "🌳",
-    location: "دبي، الإمارات العربية المتحدة",
-    title: "واحة الصحراء السكنية",
+    logo: "/images/projects/logo2.png",
+    location: "  مدينة جازان ",
+    title: "  شاطئ الشقيق",
     description:
       "تصميم مجتمع سكني متكامل في قلب الصحراء، يدمج العمارة التقليدية مع التقنيات الحديثة. يوفر المشروع بيئة معيشية فريدة تحترم الطبيعة وتحافظ على الموارد من خلال أنظمة الطاقة المتجددة وإدارة المياه المبتكرة.",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800",
+    image: "/images/projects/image2.png",
   },
   {
     id: 3,
-    logo: "🏖️",
-    location: "جدة، المملكة العربية السعودية",
-    title: "كورنيش البحر الأحمر",
+    logo: "/images/projects/logo3.png",
+    location: "مدينة العسير",
+    title: "أمان جازان",
     description:
       "إعادة تطوير شاملة لمنطقة الواجهة البحرية، تشمل ممشى عصري، مساحات ترفيهية، ومناطق تجارية مستدامة. يهدف المشروع إلى تعزيز السياحة المحلية وخلق وجهة عالمية تحتفي بالثقافة البحرية للمنطقة.",
-    image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800",
+    image: "/images/projects/image3.png",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function ProjectsSection() {
               }`}
               onClick={() => handleProjectChange(index)}
             >
-              <span className="projects-nav__logo">{project.logo}</span>
+              <img src={project.logo} alt={project.title} className="projects-nav__logo" />
               <span className="projects-nav__title">{project.title}</span>
             </button>
           ))}
@@ -79,10 +79,10 @@ export default function ProjectsSection() {
 
         <div className="project-showcase">
           <div className={`project-showcase__content ${isAnimating ? "project-showcase__content--exit" : "project-showcase__content--enter"}`}>
-    
+
 
             <div className="project-showcase__text">
-              <div className="project-showcase__logo">{currentProject.logo}</div>
+              <img src={currentProject.logo} alt={currentProject.title} className="project-showcase__logo" />
               <div className="project-showcase__location">
                 📍 {currentProject.location}
               </div>
@@ -93,11 +93,11 @@ export default function ProjectsSection() {
                 {currentProject.description}
               </p>
               <Link href="/services" className="project-showcase__button">
-                طلب دراسة مشابهة
+              <span> شاهد المزيد    &gt;&gt;</span>
               </Link>
             </div>
 
-                    <div
+                        <div
               className="project-showcase__image"
               onClick={handleNext}
               style={{ cursor: "pointer" }}

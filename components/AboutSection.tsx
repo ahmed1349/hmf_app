@@ -43,7 +43,7 @@ export default function AboutSection() {
               العالمية.
             </p>
               <Link href="/services" className="about-cta-button">
-              <span> اكتشف خدماتنا     &gt;&gt;</span>
+              <span> شاهد المزيد    &gt;&gt;</span>
             </Link>
 
      

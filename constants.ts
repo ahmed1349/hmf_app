@@ -46,6 +46,8 @@ export const NAV_LINKS: NavLink[] = [
   { label: "خدماتنا", href: "#services" },
   { label: "مشاريعنا", href: "#projects" },
   { label: "تواصل معنا", href: "#contact" },
+  { label: "الأخبار", href: "#news" },
+  { label: "شركاؤنا", href: "#partners" },
 ];
 
 export const HERO_STATS: HeroStat[] = [

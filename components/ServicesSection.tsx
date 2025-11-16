@@ -56,7 +56,7 @@ export default function ServicesSection() {
           </p>
           <button className="services-button">
             
-             <span> استعرض جميع الخدمات &gt;&gt;</span>
+              <span> شاهد المزيد    &gt;&gt;</span>
             </button>
         </div>
 
