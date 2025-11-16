@@ -24,7 +24,7 @@ export default function Loader() {
     return (
       <div className="loader-complete">
         <div className="complete-content">
-          <h1 className="complete-title">Welcome! 🎉</h1>
+          <h1 className="complete-title">Welcome!</h1>
           <p className="complete-subtitle">Loading Complete</p>
         </div>
       </div>
@@ -52,7 +52,7 @@ export default function Loader() {
 
         {/* Brand Name */}
         <h2 className="brand-name">HMF</h2>
-        <p className="brand-subtitle">LOADING....</p>
+        <p className="brand-subtitle">LOADING....<br/> مكتب حسن محمد فقيه </p>
 
         {/* Progress Bar */}
         <div className="progress-wrapper">
