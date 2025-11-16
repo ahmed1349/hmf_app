@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import { NAV_LINKS, HERO_STATS } from "@/constants";
+import SearchIcon from "./SearchIcon";
 
 export default function HeroSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -162,13 +163,16 @@ export default function HeroSection() {
           </div>
 
           {/* Desktop Contact Buttons */}
+
+          {/* Desktop Contact Buttons */}
           <div className="desktop-contact-buttons">
             <button className="contact-button">
-              <span className="contact-button-content">
-                <span className="contact-icon-wrapper">
-                  <WhatsappIcon className="contact-icon" />
-                </span>
-                <span className="contact-label">واتساب</span>
+              <span className="contact-icon-wrapper">
+                <SearchIcon className="contact-icon" />
+              </span>
+              <span className="contact-divider" />
+              <span className="contact-icon-wrapper">
+                <WhatsappIcon className="contact-icon" />
               </span>
               <span className="contact-divider" />
               <span className="contact-icon-wrapper">
@@ -176,6 +180,7 @@ export default function HeroSection() {
               </span>
             </button>
           </div>
+      
 
           {/* Desktop Navigation */}
           <nav className="desktop-nav">
@@ -258,21 +263,14 @@ export default function HeroSection() {
 
             {/* Gallery Section */}
             <div className="gallery-section">
-              <div className="gallery-header">
-    
-                <div className="gallery-header-text">
-                  <p className="gallery-title">زاوية من مشاريعنا</p>
-                </div>
-
-              </div>
               <div className="gallery-grid">
                 <div
                   className="gallery-item-tall gallery-clickable"
-                  style={{ backgroundImage: "url('/images/hero/Hero-1.png')" }}
-                  onClick={() => changeBackground('/images/hero/Hero-1.png')}
+                  style={{ backgroundImage: "url('/images/hero/Hero2.png')" }}
+                  onClick={() => changeBackground('/images/hero/Hero2.png')}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => e.key === 'Enter' && changeBackground('/images/hero/Hero-1.png')}
+                  onKeyDown={(e) => e.key === 'Enter' && changeBackground('/images/hero/Hero2.png')}
                 />
                 <div
                   className="gallery-item-tall gallery-clickable"
@@ -282,14 +280,7 @@ export default function HeroSection() {
                   tabIndex={0}
                   onKeyDown={(e) => e.key === 'Enter' && changeBackground('/images/hero/Hero.png')}
                 />
-                <div
-                  className="gallery-item-wide gallery-clickable"
-                  style={{ backgroundImage: "url('/images/hero/Hero2.png')" }}
-                  onClick={() => changeBackground('/images/hero/Hero2.png')}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => e.key === 'Enter' && changeBackground('/images/hero/Hero2.png')}
-                />
+                
               </div>
             </div>
           </div>

@@ -58,7 +58,6 @@ export default function ProjectsSection() {
     <section id="projects" className="featured-projects">
       <div className="featured-projects__container">
         <div className="featured-projects__header">
-          <div className="section__eyebrow">أعمال مختارة</div>
           <h2 className="section__title">نماذج من مشاريعنا الميدانية</h2>
         </div>
 

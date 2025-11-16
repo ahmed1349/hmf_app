@@ -53,7 +53,6 @@ export default function NewsSection() {
     <section className="section" id="news">
       <div className="featured-projects__container">
         <div className="featured-projects__header">
-          <div className="section__eyebrow">الأخبار </div>
           <h2 className="section__title">   الاخبار & <br />الانشطة الفعلية</h2>
         </div>
 

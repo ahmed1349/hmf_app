@@ -45,9 +45,10 @@ export const NAV_LINKS: NavLink[] = [
   { label: "من نحن", href: "#about-us" },
   { label: "خدماتنا", href: "#services" },
   { label: "مشاريعنا", href: "#projects" },
-  { label: "تواصل معنا", href: "#contact" },
   { label: "الأخبار", href: "#news" },
   { label: "شركاؤنا", href: "#partners" },
+  { label: "تواصل معنا", href: "#contact" },
+
 ];
 
 export const HERO_STATS: HeroStat[] = [
@@ -158,3 +159,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
   { label: "YouTube", href: "https://youtube.com" },
   { label: "WhatsApp", href: "https://wa.me/+966000000000" },
 ];
+
+
+

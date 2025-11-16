@@ -30,7 +30,6 @@ export default function PartnersSection() {
     <section className="partners-section" id='partners'>
       <div className="partners-container">
         <div className="partners-header">
-          <div className="partners-eyebrow">شركاؤنا</div>
           <h2 className="partners-title">شركاؤنا في النجاح</h2>
           <p className="partners-description">
             نفخر بتعاوننا مع مؤسسات وشركات رائدة تشاركنا التزامنا بالجودة والابتكار والتميز. معًا، نبني
