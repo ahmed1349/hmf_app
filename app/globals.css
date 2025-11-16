@@ -378,7 +378,7 @@ body {
 }
 
 .mobile-menu.open {
-  max-height: 480px;
+  min-height: 600px;
   opacity: 1;
 }
 
