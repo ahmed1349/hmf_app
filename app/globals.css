@@ -1974,11 +1974,11 @@ body {
 
 .footer__newsletter {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
-  gap: clamp(24px, 6vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   padding: clamp(24px, 4vw, 32px);
-  border-radius: 32px;
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(14px);
@@ -2003,7 +2003,7 @@ body {
   align-items: center;
   gap: 12px;
   background: #fff;
-  border-radius: 999px;
+  border-radius: 30px;
   padding: 8px;
 }
 
@@ -2024,7 +2024,7 @@ body {
 
 .footer__newsletter-form button {
   border: none;
-  border-radius: 999px;
+  border-radius: 45px;
   background: #000;
   color: #fff;
   font-weight: 700;
