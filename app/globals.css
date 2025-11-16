@@ -607,7 +607,6 @@ body {
 @media (min-width: 768px) {
   .gallery-section {
     max-width: 40rem;
-    min-width: 20rem;
   }
 }
 
