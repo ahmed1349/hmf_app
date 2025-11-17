@@ -353,44 +353,6 @@ function ArrowLeft({ className }: { className?: string }) {
     </svg>
   );
 }
-
-function ArrowUp({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 19V5" />
-      <path d="M5 12l7-7 7 7" />
-    </svg>
-  );
-}
-
-function LogoMark({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 64 64"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 50V14l20-6 20 6v36" />
-      <path d="M12 26h40" />
-      <path d="M32 8v44" />
-      <path d="M20 32h24" />
-      <path d="M20 40h24" />
-    </svg>
-  );
-}
-
 function MenuIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -426,12 +388,5 @@ function CloseIcon({ className }: { className?: string }) {
   );
 }
 
-function ArrowLeftFilled({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M19 11H9.83l3.58-3.59L12 6l-6 6 6 6 1.41-1.41L9.83 13H19z" />
-    </svg>
-  );
-}
 
 export { HeroSection };
