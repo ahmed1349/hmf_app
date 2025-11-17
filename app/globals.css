@@ -1629,12 +1629,13 @@ body {
   background: #fff;
   direction: rtl;
   padding: 2rem 1rem;
+
 }
 
 .partners-container {
   max-width: 1200px;
   margin: 0 auto;
-  border: solid 1px #35303029;
+  border-bottom: solid 1px #35303029;
   border-radius: 15px;
 
 }
