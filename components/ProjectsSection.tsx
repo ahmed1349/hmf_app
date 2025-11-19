@@ -84,7 +84,10 @@ export default function ProjectsSection() {
             <div className="project-showcase__text">
               <img src={currentProject.logo} alt={currentProject.title} className="project-showcase__logo" />
               <div className="project-showcase__location">
-                📍 {currentProject.location}
+                <span> 
+                   <LocationIcon /> {currentProject.location}
+                </span>
+              
               </div>
               <h3 className="project-showcase__title">
                 {currentProject.title}
@@ -114,5 +117,21 @@ export default function ProjectsSection() {
         </div>
       </div>
     </section>
+  );
+}
+function LocationIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="footer__icon"
+    >
+      <path d="M12 21s-6-5.8-6-10a6 6 0 1112 0c0 4.2-6 10-6 10z" />
+      <circle cx="12" cy="11" r="2.5" />
+    </svg>
   );
 }

@@ -263,14 +263,15 @@ export default function HeroSection() {
             {/* Gallery Section */}
             <div className="gallery-section">
               <div className="gallery-grid">
-                <div
-                  className="gallery-item-tall gallery-clickable"
+                <div 
+                  className="gallery-item-tall gallery-clickable w-200px h-160px"
                   style={{ backgroundImage: "url('/images/hero/Hero2.png')" }}
                   onClick={() => changeBackground('/images/hero/Hero2.png')}
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => e.key === 'Enter' && changeBackground('/images/hero/Hero2.png')}
                 />
+                <br />
                 <div
                   className="gallery-item-tall gallery-clickable"
                   style={{ backgroundImage: "url('/images/hero/Hero.png')" }}
@@ -284,7 +285,11 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Stats Section */}
+
+        </div>
+      </div>
+
+                {/* Stats Section */}
           <div ref={statsRef} className="stats-section">
             {HERO_STATS.map((stat, index) => (
               <div key={stat.label} className="stat-card">
@@ -295,8 +300,6 @@ export default function HeroSection() {
               </div>
             ))}
           </div>
-        </div>
-      </div>
     </section>
   );
 }

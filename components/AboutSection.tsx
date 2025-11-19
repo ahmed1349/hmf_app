@@ -1,7 +1,8 @@
 // AboutSection.tsx
 import Link from "next/link";
+import Image from "next/image";
 import { Building2, Users, Award } from "lucide-react";
-
+import { useState } from "react";
 
 const ABOUT_HIGHLIGHTS = [
   {
@@ -22,9 +23,12 @@ const ABOUT_HIGHLIGHTS = [
 ];
 
 export default function AboutSection() {
+  const [activeIndex, setActiveIndex] = useState(0); // default: first card
+
   return (
     <section id="about-us" className="about-section" dir="rtl">
       <div className="about-container">
+
         {/* Section Title */}
         <div className="about-section-header">
           <h2 className="about-section-title">معلومات عنا</h2>
@@ -32,6 +36,7 @@ export default function AboutSection() {
 
         {/* Main Content Grid */}
         <div className="about-main-grid">
+
           {/* Right Side - Text Content */}
           <div className="about-text-content">
             <h3 className="about-main-title">
@@ -42,21 +47,24 @@ export default function AboutSection() {
               والخاصة بكفاءة واحترافية، بدعم من فريق متمرس يستخدم أحدث التقنيات ويطبق أعلى المعايير
               العالمية.
             </p>
-              <Link href="/services" className="about-cta-button">
-              <span> شاهد المزيد    &gt;&gt;</span>
-            </Link>
 
-     
+            <Link href="/services" className="about-cta-button">
+              <span> شاهد المزيد &gt;&gt;</span>
+            </Link>
           </div>
 
           {/* Left Side - Image */}
           <div className="about-image-wrapper">
-            <img
+            <Image
+              width={610}
+              height={500}
               src="/images/about/about1.png"
               alt="مشاريع هندسية"
               className="about-main-image"
             />
+
             <div className="about-image-overlay"></div>
+
             <div className="about-image-badge">
               <p className="about-badge-year">منذ عام 2010</p>
               <p className="about-badge-text">خبرة ممتدة في المملكة</p>
@@ -68,26 +76,36 @@ export default function AboutSection() {
         <div className="about-cards-grid">
           {ABOUT_HIGHLIGHTS.map((item, index) => {
             const Icon = item.icon;
+            const isActive = index === activeIndex;
+
             return (
-              <div key={index} className="about-card">
+              <div
+                key={index}
+                className={`about-card ${isActive ? "about-card-hover" : ""}`}
+                onMouseEnter={() => setActiveIndex(index)}
+                onMouseLeave={() => setActiveIndex(0)} // revert to first card
+              >
                 <div className="about-card-content">
-                  {/* Text Content - Left Side */}
-                  <div className="about-card-text">
-                    <h4 className="about-card-title">{item.title}</h4>
-                    <p className="about-card-description">{item.description}</p>
-                  </div>
-                  
-                  {/* Icon - Right Side */}
+
+                  {/* Icon */}
                   <div className="about-card-icon-wrapper">
                     <div className="about-card-icon">
                       <Icon className="about-icon" />
                     </div>
                   </div>
+
+                  {/* Text */}
+                  <div className="about-card-text">
+                    <h4 className="about-card-title">{item.title}</h4>
+                    <p className="about-card-description">{item.description}</p>
+                  </div>
+
                 </div>
               </div>
             );
           })}
         </div>
+
       </div>
     </section>
   );
