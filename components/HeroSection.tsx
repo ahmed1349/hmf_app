@@ -253,7 +253,7 @@ export default function HeroSection() {
                   مع التزام كامل بتطبيق أعلى معايير الجودة والابتكار، تعمل على تنفيذ المشاريع في منطقة الباحة وخارجها بكفاءة عالية،
                 </p>
                 <div className="hero-buttons">
-                  <Link href="/about-us" className="hero-button-primary">
+                  <Link href="#about-us" className="hero-button-primary">
                     <span>من نحن  &gt;&gt;</span>
                   </Link>
                 </div>

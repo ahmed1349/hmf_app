@@ -259,6 +259,33 @@ body {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
+
+.contact-icon-wrapper {
+  position: relative;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Optional: Add a fade and scale effect */
+.contact-icon {
+  transition: transform 0.2s ease;
+}
+
+.contact-icon-wrapper:hover .contact-icon {
+  transform: scale(0);
+}
+
+/* Alternative: Slide up and fade */
+.contact-icon-wrapper {
+  position: relative;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.contact-icon-wrapper:hover {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
 /* Desktop Navigation */
 .desktop-nav {
   display: none;
@@ -291,8 +318,8 @@ body {
 
 .nav-link {
   white-space: nowrap;
-  border-radius: 9999px;
-  padding: 0.5rem 1rem;
+  border-radius: 9px;
+  padding: 1rem 1rem;
   font-size: 1rem;
   font-weight: 800;
   color: #fff;
@@ -318,9 +345,10 @@ body {
 }
 
 .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  border-bottom: solid 2px #fff ;
+
 }
 
 .nav-link:focus {
@@ -329,14 +357,15 @@ body {
 
 .nav-link:focus-visible {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
+  border-bottom: solid 2px #fff ;
 }
 
 /* Active nav link */
 .nav-link-active {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
+
   color: #fff;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: solid 2px #fff ;
 }
 
 /* Desktop Logo */
@@ -491,10 +520,17 @@ body {
 }
 
 /* Hero Content */
+.hero-content-wrapper{
+  margin-top: 3rem;
+}
+
+
 .hero-content {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  margin: 2rem 0;
+  
 }
 
 @media (min-width: 768px) {
@@ -507,7 +543,6 @@ body {
 }
 
 .hero-text-section {
-  max-width: 42rem;
   text-align: right;
 }
 
@@ -520,15 +555,13 @@ body {
 .hero-title {
   font-size: 2.25rem;
   font-weight: 800;
-  line-height: 1.4;
 }
-
 @media (min-width: 640px) {
   .hero-title {
     font-size: 3rem;
+    white-space: nowrap; /* Keep title on one line from 640px and up */
   }
 }
-
 @media (min-width: 1024px) {
   .hero-title {
     font-size: 3.5rem;
@@ -538,6 +571,9 @@ body {
 .hero-description {
   font-size: 1.125rem;
   color: rgba(255, 255, 255, 0.8);
+  max-width: 50vw; /* Limits description to middle of screen */
+  margin-left: auto;
+
 }
 
 .hero-buttons {
@@ -558,44 +594,31 @@ body {
   border: none;
   cursor: pointer;
   transition: all 0.2s;
-
+  overflow: hidden;
+  position: relative;
 }
 
-.hero-button-primary:hover {
-  background-color: rgba(2, 6, 22, 0.9);
-  color: #fff;
-  font-size: larger;
-  border: solid 1px #ffffff4f;
+
+
+/* Animate the text content */
+.hero-button-primary span {
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 
-.hero-button-secondary {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  border-radius: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background: transparent;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.2s;
-  
-}
-
-.hero-button-secondary:hover {
-  border-color: #fff;
-  background-color: rgba(255, 255, 255, 0.1);
+.hero-button-primary:hover span {
+  opacity: 0;
+  transform: rotate(-45deg) translateY(-20px);
 }
 
 .button-icon {
   height: 1.25rem;
   width: 1.25rem;
+  transition: none; /* Icon stays stable */
 }
-
 /* Gallery Section */
 .gallery-section {
+
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -674,14 +697,15 @@ body {
 
 @media (min-width: 768px) {
   .gallery-item-tall {
-    min-height: 250px;
+  height: 160px !important;
+  width: 200px !important;
   }
 }
 
 .gallery-item-wide {
   grid-column: span 2;
-  aspect-ratio: 7 / 3;
-  min-height: 150px;
+  height: 160px !important;
+  width: 200px !important;
   border-radius: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
   background-size: cover;
@@ -696,6 +720,7 @@ body {
 
 /* Gallery clickable items */
 .gallery-clickable {
+  margin-right: 6rem;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
