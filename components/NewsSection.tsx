@@ -56,7 +56,7 @@ export default function NewsSection() {
         <div className="featured-projects__header">
           <h2 className="section__title">   الاخبار & <br />الانشطة الفعلية</h2>
         </div>
-
+        <div className="flex flex-row justify-center items-center">
         <nav className="projects-nav">
           {FEATURED_PROJECTS.map((project, index) => (
             <button
@@ -70,6 +70,8 @@ export default function NewsSection() {
             </button>
           ))}
         </nav>
+
+          </div>
 
         <div className="project-showcase">
           <div className={`project-showcase__content ${isAnimating ? "project-showcase__content--exit" : "project-showcase__content--enter"}`}>

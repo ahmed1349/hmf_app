@@ -2,7 +2,6 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Building2, Users, Award } from "lucide-react";
 import { useState } from "react";
 
 const ABOUT_HIGHLIGHTS = [
