@@ -14,6 +14,7 @@ export default function HeroSection() {
   );
   const [heroBackground, setHeroBackground] = useState("/images/hero/Hero2.png");
   const [activeSection, setActiveSection] = useState("hero");
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   const statsRef = useRef<HTMLDivElement | null>(null);
   const hasAnimated = useRef(false);
   const frameRefs = useRef<number[]>([]);
@@ -163,8 +164,6 @@ export default function HeroSection() {
           </div>
 
           {/* Desktop Contact Buttons */}
-
-          {/* Desktop Contact Buttons */}
           <div className="desktop-contact-buttons">
             <button className="contact-button">
               <span className="contact-icon-wrapper">
@@ -246,6 +245,25 @@ export default function HeroSection() {
             {/* Text Section */}
             <div className="hero-text-section">
               <div className="hero-text-content">
+                {/* Video Button */}
+                <div className="video-trigger-wrapper">
+                  <button 
+                    onClick={() => setIsVideoOpen(true)}
+                    className="video-trigger-button"
+                  >
+
+                     <span className="video-trigger-text">تشغيل الفيديو</span>
+                    <Image
+                      src="/images/hero/video_icon.svg"
+                      alt="Play video"
+                      width={200}
+                      height={200}
+                      className="video-icon"
+                    />
+                   
+                  </button>
+                </div>
+                
                 <h1 className="hero-title">نحو مستقبل عمراني متكامل</h1>
                 <p className="hero-description">
                  نقدم في مكتب حسن محمد فقيه للاستشارات الهندسية مجموعة متكاملة من الخدمات الهندسية.
@@ -289,17 +307,39 @@ export default function HeroSection() {
         </div>
       </div>
 
-                {/* Stats Section */}
-          <div ref={statsRef} className="stats-section">
-            {HERO_STATS.map((stat, index) => (
-              <div key={stat.label} className="stat-card">
-                <span className="stat-value">
-                  {`${stat.prefix ?? ""}${displayStats[index]}${stat.suffix ?? ""}`}
-                </span>
-                <span className="stat-label">{stat.label}</span>
-              </div>
-            ))}
+      {/* Video Modal */}
+      {isVideoOpen && (
+        <div className="video-modal-overlay" onClick={() => setIsVideoOpen(false)}>
+          <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button 
+              onClick={() => setIsVideoOpen(false)}
+              className="video-modal-close"
+            >
+              <CloseIcon className="video-close-icon" />
+            </button>
+            <video 
+              controls 
+              autoPlay
+              className="video-player"
+            >
+              <source src="/images/hero/video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
+        </div>
+      )}
+
+      {/* Stats Section */}
+      <div ref={statsRef} className="stats-section">
+        {HERO_STATS.map((stat, index) => (
+          <div key={stat.label} className="stat-card">
+            <span className="stat-value">
+              {`${stat.prefix ?? ""}${displayStats[index]}${stat.suffix ?? ""}`}
+            </span>
+            <span className="stat-label">{stat.label}</span>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

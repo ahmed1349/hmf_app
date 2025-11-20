@@ -23,6 +23,123 @@ body {
 }
 
 /* Hero Section Styles */
+/* Video Trigger Button */
+.video-trigger-wrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.video-trigger-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-direction: row-reverse;
+}
+
+.video-trigger-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.video-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.video-trigger-text {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Video Modal */
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+.video-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  background: black;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.video-modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.video-close-icon {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.video-player {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .video-trigger-button {
+    padding: 0.5rem 1rem;
+  }
+  
+  .video-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .video-trigger-text {
+    font-size: 1rem;
+  }
+}
+
+
+
+
 .hero-section {
   position: relative;
   overflow: hidden;
@@ -823,10 +940,6 @@ body {
 }
 
 /*** Section Styles about----------------------------------------------------*/
-
-/* Add this to your globals.css file */
-/* Add this to your globals.css file */
-
 /* About Section Styles */
 .about-section {
   padding: 5rem 0;

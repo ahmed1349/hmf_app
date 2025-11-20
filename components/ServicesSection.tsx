@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
+import Link from 'next/link';
 
 
 const SERVICES = [
@@ -54,10 +55,10 @@ export default function ServicesSection() {
             نقدّم خدمات فنية واستشارية تغطي مراحل المشاريع من الدراسات والتصميم حتى الإشراف والتنفيذ،
             وفق أعلى معايير الجودة والسلامة.
           </p>
-          <button className="services-button">
+           <Link href="#services" className="about-cta-button">
             
               <span> شاهد المزيد    &gt;&gt;</span>
-            </button>
+            </Link>
         </div>
 
         {/* Cards Section */}
