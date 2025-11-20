@@ -9,17 +9,17 @@ const ABOUT_HIGHLIGHTS = [
   {
     title: "خبرة واسعة",
     description: "أكثر من 15 عاماً من الخبرة في تقديم الحلول الهندسية المتكاملة",
-    icon: Building2
+    icon: "/images/about/f1.svg"
   },
   {
     title: "فريق محترف",
     description: "نخبة من المهندسين والفنيين المؤهلين لتنفيذ المشاريع بأعلى جودة",
-    icon: Users
+    icon: "/images/about/f2.svg"
   },
   {
     title: "معايير عالمية",
     description: "نلتزم بأعلى المعايير العالمية في جميع مراحل التنفيذ",
-    icon: Award
+    icon: "/images/about/f3.svg"
   }
 ];
 
@@ -57,7 +57,7 @@ export default function AboutSection() {
           {/* Left Side - Image */}
           <div className="about-image-wrapper">
             <Image
-              width={610}
+              width={650}
               height={500}
               src="/images/about/about1.png"
               alt="مشاريع هندسية"
@@ -76,7 +76,6 @@ export default function AboutSection() {
         {/* Three Cards */}
         <div className="about-cards-grid">
           {ABOUT_HIGHLIGHTS.map((item, index) => {
-            const Icon = item.icon;
             const isActive = index === activeIndex;
 
             return (
@@ -91,7 +90,7 @@ export default function AboutSection() {
                   {/* Icon */}
                   <div className="about-card-icon-wrapper">
                     <div className="about-card-icon">
-                      <Icon className="about-icon" />
+                      <Image src={item.icon} alt={item.title} width={150} height={150} className="about-icon" />
                     </div>
                   </div>
 
