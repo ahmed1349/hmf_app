@@ -67,7 +67,38 @@ export default function PartnersSection() {
             </div>
           ))}
         </div>
-      </div>
+          <br />
+
+      
+        <span className='flex items-end gap-0 mt-8  justify-end'>
+          
+                <button
+                  className="arrow-button"                >
+                  <Image
+                    src="/images/news/f1.svg"
+                    alt="Previous"
+                    width={100}
+                    height={100}
+                    className="arrow-icon"
+                  />
+                </button>
+      
+                <button
+                  className="arrow-button"
+                >
+                  <Image
+                    src="/images/news/f2.svg"
+                    alt="Next"
+                    width={100}
+                    height={100}
+                    className="arrow-icon"
+                  />
+                </button>
+      
+        </span>
+          
+              </div>
+            
     </section>
   );
 }

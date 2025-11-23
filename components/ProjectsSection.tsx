@@ -59,20 +59,23 @@ export default function ProjectsSection() {
     <section id="projects" className="featured-projects">
       <div className="featured-projects__container">
         <div className="featured-projects__header">
-          <h2 className="section__title">نماذج من مشاريعنا الميدانية</h2>
+          <h2 className="partners-title"> أحدث مشاريعنا </h2>
         </div>
 
         <div className="flex flex-row justify-center items-center">
 
         <nav className="projects-nav">
+       
           {FEATURED_PROJECTS.map((project, index) => (
+
+            
             <button
               key={project.id}
               className={`projects-nav__item ${
                 activeProject === index ? "projects-nav__item--active" : ""
               }`}
               onClick={() => handleProjectChange(index)}
-            >
+            >   
               <img src={project.logo} alt={project.title} className="projects-nav__logo" />
               <span className="projects-nav__title">{project.title}</span>
             </button>
