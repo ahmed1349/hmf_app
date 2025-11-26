@@ -48,13 +48,20 @@ export default function ServicesSection() {
           <div className="services-layout">
             {/* Sidebar with title, description, and button */}
             <div className="services-sidebar">
+                  {/* Section Title */}
+                 <div className="about-section-header">
+                   <h2 className="about-section-title">خدماتنا</h2><br />
+                 </div>
               <h2 className="services-title">خدماتناالهندسة المتكاملة</h2>
               <p className="services-description">
                 نقدّم خدمات فنية واستشارية تغطي مراحل المشاريع من الدراسات والتصميم حتى الإشراف والتنفيذ،
                 وفق أعلى معايير الجودة والسلامة.
               </p>
-              <a href="#services" className="about-cta-button">
-                <span>شاهد المزيد &gt;&gt;</span>
+              <a href="#services" className="see-more-button">
+                <span className="flex items-center gap-2">
+                 شاهد المزيد
+                 <i className="fa-solid fa-angles-left"></i>
+              </span>
               </a>
             </div>
 

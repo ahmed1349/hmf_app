@@ -81,6 +81,7 @@ export const PROJECTS: Project[] = [
       "تخطيط حضري شامل لمنطقة المال والأعمال مع حلول تنقل مرنة ومساحات عامة تفاعلية.",
     image: "/projects/project-3.jpg",
   },
+  
 ];
 
 

@@ -48,8 +48,11 @@ export default function AboutSection() {
               العالمية.
             </p>
 
-            <Link href="#services" className="about-cta-button">
-              <span> شاهد المزيد &gt;&gt;</span>
+            <Link href="#services" className="see-more-button">
+             <span className="flex items-center gap-2">
+                 شاهد المزيد
+                 <i className="fa-solid fa-angles-left"></i>
+              </span>
             </Link>
           </div>
 

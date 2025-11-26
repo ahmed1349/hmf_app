@@ -181,22 +181,37 @@ export default function HeroSection() {
           </div>
 
           {/* Desktop Contact Buttons */}
-          <div className="desktop-contact-buttons">
-            <button className="contact-button">
-              <span className="contact-icon-wrapper">
-                <SearchIcon className="contact-icon" />
-              </span>
-              <span className="contact-divider" />
-              <span className="contact-icon-wrapper">
-                <WhatsappIcon className="contact-icon" />
-              </span>
-              <span className="contact-divider" />
-              <span className="contact-icon-wrapper">
-                <MailIcon className="contact-icon" />
-              </span>
-            </button>
-          </div>
-      
+<div className="desktop-contact-buttons">
+  <button className="contact-button">
+ 
+    <div className="toggle-wrapper">
+      <span className="toggle-line toggle-line-1"></span>
+      <span className="toggle-line toggle-line-2"></span>
+    </div>
+    <span className="contact-divider" />
+    
+    {/* Icons - visible by default, hidden on hover */}
+    <div className="contact-icons-container">
+      <span className="contact-icon-wrapper">
+        <SearchIcon className="contact-icon" />
+      </span>
+      <span className="contact-icon-wrapper">
+        <WhatsappIcon className="contact-icon" />
+      </span>
+      <span className="contact-icon-wrapper">
+        <MailIcon className="contact-icon" />
+      </span>
+    </div>
+    
+    {/* Text - hidden by default, visible on hover */}
+    <div className="contact-text-container">
+      <span className="contact-text">Get in Touch</span>
+    </div>
+    
+    {/* Toggle with two spans - controls the animation */}
+
+  </button>
+</div>
 
           {/* Desktop Navigation */}
           <nav className="desktop-nav">
@@ -293,7 +308,10 @@ export default function HeroSection() {
                 </p>
                 <div className="hero-buttons">
                   <Link href="#about-us" className="hero-button-primary">
-                    <span>من نحن  &gt;&gt;</span>
+                    <span className="flex items-center gap-2">
+                      من نحن
+                      <i className="fa-solid fa-angles-left"></i>
+                    </span>
                   </Link>
                 </div>
               </div>

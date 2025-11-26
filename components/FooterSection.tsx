@@ -1,17 +1,31 @@
 import Link from "next/link";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { NAV_LINKS, PROJECTS, } from "@/constants";
+import Image from "next/image";
 
 export default function FooterSection() {
   return (
     <footer id="contact" className="footer">
       <div className="footer__inner">
         <div className="footer__brand">
-          <h2>مكتب حسن محمد فقيه للاستشارات الهندسية</h2>
+
+           <Link href="" className="mobile-logo-link">
+              <Image
+                src="/images/hero/logo white.svg"
+                alt="logo"
+                width={160}
+                height={68}
+                className="desktop-logo-image"/>
+              </Link>
           <p>
             نقدم حلولًا هندسية متكاملة في التصميم المعماري، التخطيط الحضري، الإشراف وإدارة المشاريع من
             خلال فريق متخصص يعتمد على أفضل الممارسات العالمية.
           </p>
+
+           <Link href="#services" className="see-more-button">
+              <span> شاهد المزيد <i className="fa-regular fa-circle-up"></i></span>
+            </Link>
+            
           <div className="footer__social">
 
             <Link href="https://x.com" className="footer__social-link">
