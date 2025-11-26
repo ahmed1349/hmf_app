@@ -366,17 +366,6 @@ body {
   transform: rotate(-45deg) translateY(-3px);
 }
 
-/* Alternative: make them become a backslash */
-/* Uncomment this if you prefer the slash effect */
-/*
-.toggle-wrapper:hover .toggle-line-1 {
-  transform: rotate(-45deg);
-}
-
-.toggle-wrapper:hover .toggle-line-2 {
-  opacity: 0;
-}
-*/
 .contact-button {
   display: flex;
   height: 3.5rem;
@@ -411,10 +400,10 @@ body {
   width: 2.5rem;
   align-items: center;
   justify-content: center;
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
   position: relative;
   transition: opacity 0.4s ease, transform 0.4s ease;
+  color: rgb(255, 246, 246);
+  font-weight: 500;
 }
 
 .contact-icon-wrapper:hover {
@@ -423,8 +412,8 @@ body {
 }
 
 .contact-icon {
-  height: 1.25rem;
-  width: 1.25rem;
+  height: 2rem;
+  width: 2rem;
 }
 
 .contact-label {
@@ -1730,54 +1719,6 @@ body {
   line-height: 1.8;
   color: #475569;
   margin: 0;
-}
-
-.project-showcase__button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 2rem;
-  background: #000000;
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  align-self: flex-start;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  position: relative;
-  overflow: hidden;
-}
-
-
-.project-showcase__button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: #ffffff;
-  color: rgb(0, 0, 0);
-  transition: width 0.4s ease;
-  z-index: 0;
-}
-
-.project-showcase__button:hover::before {
-  width: 100%;
-
-}
-
-.project-showcase__button:hover {
-  transform: translateY(-3px);
-  background: #ffffff;
-  color: rgb(0, 0, 0);
-}
-
-.project-showcase__button span {
-  position: relative;
-  z-index: 1;
 }
 
 .project-showcase__image {
