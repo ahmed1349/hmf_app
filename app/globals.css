@@ -403,7 +403,6 @@ body {
   position: relative;
   transition: opacity 0.4s ease, transform 0.4s ease;
   color: rgb(255, 246, 246);
-  font-weight: 500;
 }
 
 .contact-icon-wrapper:hover {
