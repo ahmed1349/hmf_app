@@ -15,9 +15,11 @@ export default function HeroSection() {
   const [heroBackground, setHeroBackground] = useState("/images/hero/Hero2.png");
   const [activeSection, setActiveSection] = useState("hero");
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [displayedText, setDisplayedText] = useState('');
   const statsRef = useRef<HTMLDivElement | null>(null);
   const hasAnimated = useRef(false);
   const frameRefs = useRef<number[]>([]);
+  const fullText = 'تشغيل الفيديو';
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
@@ -39,6 +41,21 @@ export default function HeroSection() {
       closeMenu();
     }
   };
+
+  // Letter-by-letter animation for video text
+  useEffect(() => {
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setDisplayedText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 150); // Adjust speed here (milliseconds per letter)
+    
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const frames = frameRefs.current;
@@ -144,8 +161,8 @@ export default function HeroSection() {
               <Image
                 src="/images/hero/logo white.svg"
                 alt="logo"
-                width={140}
-                height={48}
+                width={160}
+                height={68}
                 className="desktop-logo-image"/>
               </Link>
 
@@ -251,13 +268,17 @@ export default function HeroSection() {
                     onClick={() => setIsVideoOpen(true)}
                     className="video-trigger-button"
                   >
-
-                     <span className="video-trigger-text">تشغيل الفيديو</span>
+                     <span className="video-trigger-text">
+                       {displayedText}
+                       {displayedText.length < fullText.length && (
+                         <span style={{ opacity: 0.7 }}>|</span>
+                       )}
+                     </span>
                     <Image
                       src="/images/hero/video_icon.svg"
                       alt="Play video"
-                      width={200}
-                      height={200}
+                      width={300}
+                      height={300}
                       className="video-icon"
                     />
                    

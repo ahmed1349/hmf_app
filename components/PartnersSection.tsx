@@ -54,7 +54,9 @@ export default function PartnersSection() {
                 </div>
                 <div className="partner-card-back">
                   <div className="partner-content">
-                    <img 
+                    <Image
+                      width={140}
+                      height={140} 
                       src={partner.logo} 
                       alt={`${partner.name} logo`}
                       className="partner-logo"

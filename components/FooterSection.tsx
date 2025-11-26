@@ -1,6 +1,6 @@
 import Link from "next/link";
-
-import { NAV_LINKS, PROJECTS, SOCIAL_LINKS } from "@/constants";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import { NAV_LINKS, PROJECTS, } from "@/constants";
 
 export default function FooterSection() {
   return (
@@ -13,11 +13,19 @@ export default function FooterSection() {
             خلال فريق متخصص يعتمد على أفضل الممارسات العالمية.
           </p>
           <div className="footer__social">
-            {SOCIAL_LINKS.map((link) => (
-              <Link key={link.label} href={link.href} className="footer__social-link">
-                {link.label}
-              </Link>
-            ))}
+
+            <Link href="https://x.com" className="footer__social-link">
+              <i className="fa-brands fa-whatsapp"></i>
+            </Link>
+             <Link href="https://x.com" className="footer__social-link">
+             <i className="fa-brands fa-facebook-f"></i>
+            </Link>
+             <Link href="https://x.com" className="footer__social-link">
+             <i className="fa-brands fa-instagram"></i>
+            </Link>
+             <Link href="https://x.com" className="footer__social-link">
+              <i className="fa-brands fa-youtube"></i>
+            </Link>
           </div>
         </div>
 
@@ -26,8 +34,10 @@ export default function FooterSection() {
             <h3>روابط سريعة</h3>
             <ul>
               {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href}>{link.label}</Link>
+                <li key={link.href}> 
+                  <i className="fas fa-chevron-left"></i>
+                  <Link href={link.href}>{link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -37,10 +47,13 @@ export default function FooterSection() {
             <h3>مشاريع مختارة</h3>
             <ul>
               {PROJECTS.slice(0, 3).map((project) => (
-                <li key={project.title}>{project.title}</li>
+                <li key={project.title}>     
+                <i className="fas fa-chevron-left">
+                </i>{project.title}</li>
               ))}
             </ul>
           </div>
+          <br />
 
           <div>
             <h3>تواصل معنا</h3>
